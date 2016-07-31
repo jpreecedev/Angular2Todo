@@ -16,7 +16,7 @@ webpack --progress --colors --watch
 dotnet run
 ```
 
-Open your favourite web browser and point to `http://localhost:8080/`.
+Open your favourite web browser and point to `http://localhost:5000/`.
 
 ## Known issues
 Universal Angular does not currently (at time of writing) support `localStorage`, so todo's are not saved between refreshes.  ([See GitHub Issue](https://github.com/angular/universal/issues/272))
