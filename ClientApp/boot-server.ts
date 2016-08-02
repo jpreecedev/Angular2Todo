@@ -5,6 +5,8 @@ import * as ngUniversal from 'angular2-universal';
 import { BASE_URL, ORIGIN_URL, REQUEST_URL } from 'angular2-universal/common';
 import { AppComponent } from './components/app/app.component';
 import { TodoStore } from './components/services/todo.service';
+import { provideRouter } from '@angular/router';
+import { routes } from './routes';
 
 const bootloader = ngUniversal.bootloader({
     async: true,
@@ -21,6 +23,7 @@ export default function (params: any): Promise<{ html: string, globals?: any }> 
             provide(ORIGIN_URL, { useValue: params.origin }),
             provide(REQUEST_URL, { useValue: params.url }),
             ...ngUniversal.NODE_HTTP_PROVIDERS,
+            provideRouter(routes),
             ...ngUniversal.NODE_LOCATION_PROVIDERS,
             TodoStore
         ],

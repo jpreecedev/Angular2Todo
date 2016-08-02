@@ -1,15 +1,5 @@
-<section class="todoapp">
-	<header class="header">
-		<h1>todos</h1>
-		<input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodoText" (keyup.enter)="addTodo()">
-	</header>
-	<section class="main" *ngIf="todoStore.todos.length > 0">
-		<input class="toggle-all" type="checkbox" *ngIf="todoStore.todos.length" [(ngModel)]="toggleAllChecked" [checked]="todoStore.allCompleted()" (click)="todoStore.setAllTo(toggleAllChecked)">
-		<ul class="todo-list">
-			<li *ngFor="let todo of todoStore.todos" [class.completed]="todo.completed" [class.editing]="todo.editing">
-				<app-todo [todo]="todo"></app-todo>	
-			</li>
-		</ul>
-	</section>
-	<app-footer></app-footer>
-</section>
+<router-outlet></router-outlet>
+
+<div class="links">
+	<a routerLink="home" routerLinkActive="active">Home</a> | <a routerLink="about" routerLinkActive="active">About</a>
+</div>

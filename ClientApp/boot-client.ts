@@ -9,11 +9,14 @@ import { FormBuilder } from '@angular/common';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { AppComponent } from './components/app/app.component';
 import { TodoStore } from './components/services/todo.service';
+import { provideRouter } from '@angular/router';
+import { routes } from './routes';
 
 bootstrap(AppComponent, [
     ...HTTP_PROVIDERS,
     FormBuilder,
-    TodoStore
+    TodoStore,
+    provideRouter(routes)
 ]);
 
 // Basic hot reloading support. Automatically reloads and restarts the Angular 2 app each time
